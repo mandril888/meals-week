@@ -1,0 +1,15 @@
+<h1 class="display-4">MEAL register</h1>
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <div class="form-group">
+    <input #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" placeholder="name" required>
+  </div>
+  <div class="form-group">
+    <input #type="ngModel" [(ngModel)]="service.formData.type" class="form-control" placeholder="type" required>
+  </div>
+  <div class="form-group">
+    <input #sano="ngModel" [(ngModel)]="service.formData.sano" class="form-control" placeholder="sano" required>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn bt-large btn-info">Add</button>
+  </div>
+</form>
