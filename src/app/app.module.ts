@@ -8,10 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
-import { EmployeesComponent } from './employees/employees.component';
-import { EmployeeComponent } from './employees/employee/employee.component';
-import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
-import { EmployeeService } from './shared/employee.service';
+import { EmployeesComponent } from './meals/meals.component';
+import { EmployeeComponent } from './meals/meal/meal.component';
+import { EmployeeListComponent } from './meals/meal-list/meal-list.component';
+import { EmployeeService } from './shared/meal.service';
 
 @NgModule({
   declarations: [

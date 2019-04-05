@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from 'src/app/shared/employee.service';
+import { EmployeeService } from 'src/app/shared/meal.service';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 import { isNumber } from 'util';
 
 @Component({
-  selector: 'app-employee',
-  templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  selector: 'app-meal',
+  templateUrl: './meal.component.html',
+  styleUrls: ['./meal.component.css']
 })
 export class EmployeeComponent implements OnInit {
 
@@ -36,9 +36,9 @@ export class EmployeeComponent implements OnInit {
     let data = Object.assign({}, form.value);
     delete data.id;
     if (form.value.id == null)
-      this.firestore.collection('employees').add(data);
+      this.firestore.collection('meals').add(data);
     else
-      this.firestore.doc('employees/' + form.value.id).update(data);
+      this.firestore.doc('meals/' + form.value.id).update(data);
     this.resetForm(form);
     this.toastr.success('Submitted successfully', 'EMP. Register');
   }

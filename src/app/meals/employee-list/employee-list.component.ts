@@ -1,13 +1,13 @@
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from 'src/app/shared/employee.service';
-import { Employee } from 'src/app/shared/employee.model';
+import { EmployeeService } from 'src/app/shared/meal.service';
+import { Employee } from 'src/app/shared/meal.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-employee-list',
-  templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css']
+  selector: 'app-meal-list',
+  templateUrl: './meal-list.component.html',
+  styleUrls: ['./meal-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
 
@@ -33,7 +33,7 @@ export class EmployeeListComponent implements OnInit {
 
   onDelete(id: string) {
     if (confirm("Are you sure to delete this record?")) {
-      this.firestore.doc('employees/' + id).delete();
+      this.firestore.doc('meals/' + id).delete();
       this.toastr.warning('Deleted successfully','EMP. Register');
     }
   }
