@@ -3,21 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "meals-week": {
+    "Angular7Firestore": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "sass"
-        }
-      },
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/meals-week",
+            "outputPath": "dist/Angular7Firestore",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,10 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -62,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "meals-week:build"
+            "browserTarget": "Angular7Firestore:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "meals-week:build:production"
+              "browserTarget": "Angular7Firestore:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "meals-week:build"
+            "browserTarget": "Angular7Firestore:build"
           }
         },
         "test": {
@@ -84,7 +80,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.sass"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -107,7 +103,7 @@
         }
       }
     },
-    "meals-week-e2e": {
+    "Angular7Firestore-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "meals-week:serve"
+            "devServerTarget": "Angular7Firestore:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "meals-week:serve:production"
+              "devServerTarget": "Angular7Firestore:serve:production"
             }
           }
         },
@@ -136,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "meals-week"
+  "defaultProject": "Angular7Firestore"
 }
