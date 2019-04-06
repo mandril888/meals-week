@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFirestoreModule, FirestoreSettingsToken } from "@angular/fire/firestore";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  
@@ -28,7 +28,10 @@ import { mealService } from './shared/meal.service';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [mealService],
+  providers: [
+    mealService,
+    { provide: FirestoreSettingsToken, useValue: {} },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
