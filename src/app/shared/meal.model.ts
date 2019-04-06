@@ -1,7 +1,8 @@
-export class Employee {
+export class Meal {
     id: string;
-    fullName: string;
-    empCode: string;
-    position: string;
-    mobile: string;
+    name: string;
+    description: string;
+    type: string;
+    healthy: string;
+    temperature: string;
 }

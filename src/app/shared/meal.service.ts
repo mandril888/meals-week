@@ -1,16 +1,16 @@
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
-import { Employee } from './meal.model';
+import { Meal } from './meal.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService {
-  formData: Employee;
+export class mealService {
+  formData: Meal;
 
   constructor(private firestore: AngularFirestore) { }
 
-  getEmployees() {
+  getMeals() {
     return this.firestore.collection('meals').snapshotChanges();
   }
 }

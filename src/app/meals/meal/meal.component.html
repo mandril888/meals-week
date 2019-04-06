@@ -1,23 +1,32 @@
-<h1 class="display-4">EMP. Register</h1>
+<h1 class="display-4">Register meal</h1>
+<i (click)="resetForm()" class="fa fa-plus-circle float-right"
+  (mouseover)="hover=true" (mouseleave)="hover=false"
+  [ngStyle]="{color: hover==true  ? 'green' : '' }"
+></i>
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
   <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
   <div class="form-group">
-    <input name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Full name" required>
-    <div *ngIf="fullName.invalid && fullName.touched" class="validation-error">This field is required.</div>
+    <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" placeholder="Name of meal" required>
+    <div *ngIf="name.invalid && name.touched" class="validation-error">This field is required.</div>
   </div>
   <div class="form-group">
-    <input name="position" #position="ngModel" [(ngModel)]="service.formData.position" class="form-control" placeholder="Position" required>
+    <input name="description" #description="ngModel" [(ngModel)]="service.formData.description" class="form-control" placeholder="Description">
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <input name="empCode" #empCode="ngModel" [(ngModel)]="service.formData.empCode" class="form-control" placeholder="Emp. code" required>
+    <div class="form-group col-md-4">
+      <input name="type" #type="ngModel" [(ngModel)]="service.formData.type" class="form-control" placeholder="Type" required>
+      <div *ngIf="type.invalid && type.touched" class="validation-error">This field is required.</div>
     </div>
-    <div class="form-group  col-md-6">
-      <input name="mobile" #mobile="ngModel" [(ngModel)]="service.formData.mobile" class="form-control" placeholder="Mobile" required>
+    <div class="form-group  col-md-4">
+      <input name="healthy" #healthy="ngModel" [(ngModel)]="service.formData.healthy" class="form-control" placeholder="Healthy" required>
+      <div *ngIf="healthy.invalid && healthy.touched" class="validation-error">This field is required.</div>
+    </div>
+    <div class="form-group  col-md-4">
+      <input name="temperature" #temperature="ngModel" [(ngModel)]="service.formData.temperature" class="form-control" placeholder="Temperature" required>
+      <div *ngIf="temperature.invalid && temperature.touched" class="validation-error">This field is required.</div>
     </div>
   </div>
   <div class="form-group">
     <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
   </div>
-
 </form>

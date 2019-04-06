@@ -8,17 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
-import { EmployeesComponent } from './meals/meals.component';
-import { EmployeeComponent } from './meals/meal/meal.component';
-import { EmployeeListComponent } from './meals/meal-list/meal-list.component';
-import { EmployeeService } from './shared/meal.service';
+import { mealsComponent } from './meals/meals.component';
+import { mealComponent } from './meals/meal/meal.component';
+import { mealListComponent } from './meals/meal-list/meal-list.component';
+import { mealService } from './shared/meal.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeesComponent,
-    EmployeeComponent,
-    EmployeeListComponent
+    mealsComponent,
+    mealComponent,
+    mealListComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,7 @@ import { EmployeeService } from './shared/meal.service';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [EmployeeService],
+  providers: [mealService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

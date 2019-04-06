@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from 'src/app/shared/meal.service';
+import { mealService } from 'src/app/shared/meal.service';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
@@ -10,9 +10,9 @@ import { isNumber } from 'util';
   templateUrl: './meal.component.html',
   styleUrls: ['./meal.component.css']
 })
-export class EmployeeComponent implements OnInit {
+export class mealComponent implements OnInit {
 
-  constructor(private service: EmployeeService,
+  constructor(private service: mealService,
     private firestore: AngularFirestore,
     private toastr: ToastrService) { }
 
@@ -21,14 +21,16 @@ export class EmployeeComponent implements OnInit {
   }
 
   resetForm(form?: NgForm) {
+    console.log('reset')
     if (form != null)
       form.resetForm();
     this.service.formData = {
       id: null,
-      fullName: '',
-      position: '',
-      empCode: '',
-      mobile: '',
+      name: '',
+      description: '',
+      type: '',
+      healthy: '',
+      temperature: '',
     }
   }
 
@@ -40,7 +42,7 @@ export class EmployeeComponent implements OnInit {
     else
       this.firestore.doc('meals/' + form.value.id).update(data);
     this.resetForm(form);
-    this.toastr.success('Submitted successfully', 'EMP. Register');
+    this.toastr.success('Submitted successfully', 'MEAL Register');
   }
 
 }
