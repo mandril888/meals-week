@@ -1,8 +1,5 @@
-<h1 class="display-4">Register meal</h1>
-<i (click)="resetForm()" class="fa fa-plus-circle float-right"
-  (mouseover)="hover=true" (mouseleave)="hover=false"
-  [ngStyle]="{color: hover==true  ? 'green' : '' }"
-></i>
+<div class="spacing-50"></div>
+<h1 class="text-center">Register meal</h1>
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
   <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
   <div class="form-group">
@@ -30,3 +27,12 @@
     <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
   </div>
 </form>
+<div class="text-center">
+  <a (click)="resetForm()"
+    (mouseover)="hover=true"
+    (mouseleave)="hover=false"
+    [ngStyle]="{color: hover==true  ? 'green' : '' }">
+    <i class="fa fa-retweet"></i> Clear form
+  </a>
+</div>
+<div class="spacing-50"></div>

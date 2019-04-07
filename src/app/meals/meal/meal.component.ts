@@ -3,7 +3,6 @@ import { mealService } from 'src/app/shared/meal.service';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
-import { isNumber } from 'util';
 
 @Component({
   selector: 'app-meal',
@@ -21,7 +20,6 @@ export class mealComponent implements OnInit {
   }
 
   resetForm(form?: NgForm) {
-    console.log('reset')
     if (form != null)
       form.resetForm();
     this.service.formData = {

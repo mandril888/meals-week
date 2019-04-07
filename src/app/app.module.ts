@@ -12,6 +12,7 @@ import { mealsComponent } from './meals/meals.component';
 import { mealComponent } from './meals/meal/meal.component';
 import { mealListComponent } from './meals/meal-list/meal-list.component';
 import { mealService } from './shared/meal.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { mealService } from './shared/meal.service';
     AngularFirestoreModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [
     mealService,
