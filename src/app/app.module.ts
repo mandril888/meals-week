@@ -14,12 +14,16 @@ import { mealListComponent } from './meals/meal-list/meal-list.component';
 import { mealService } from './shared/meal.service';
 import { AppRoutingModule } from './app-routing.module';
 
+import { MatSelectModule } from '@angular/material/select';
+import { SelectComponent } from './formComponents/select/select.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     mealsComponent,
     mealComponent,
-    mealListComponent
+    mealListComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,8 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    MatSelectModule
   ],
   providers: [
     mealService,

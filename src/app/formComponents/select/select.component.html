@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Type</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let type of types" [value]="type.value">
+      {{type.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

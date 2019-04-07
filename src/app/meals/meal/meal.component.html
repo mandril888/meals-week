@@ -11,6 +11,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col-md-4">
+      <app-select></app-select>
       <input name="type" #type="ngModel" [(ngModel)]="service.formData.type" class="form-control" placeholder="Type" required>
       <div *ngIf="type.invalid && type.touched" class="validation-error">This field is required.</div>
     </div>
